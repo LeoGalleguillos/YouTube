@@ -3,7 +3,7 @@ namespace LeoGalleguillos\YouTube\Model\Table;
 
 use Zend\Db\Adapter\Adapter;
 
-class ProductVideoUploadLog
+class Channel
 {
     /**
      * @var Adapter
@@ -17,22 +17,24 @@ class ProductVideoUploadLog
     }
 
     public function insert(
-        int $productVideoId,
-        string $youTubeVideoId
+        string $name,
+        string $youTubeUserId,
+        string $youTubeChannelId
     ): int {
         $sql = '
             INSERT
-              INTO `product_video_upload_log` (
-                       `product_video_id`
-                     , `youtube_video_id`
-                     , `created`
+              INTO `channel` (
+                       `name`
+                     , `you_tube_user_id`
+                     , `you_tube_channel_id`
                    )
-            VALUES (?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?)
                  ;
         ';
         $parameters = [
-            $productVideoId,
-            $youTubeVideoId,
+            $name,
+            $youTubeUserId,
+            $youTubeChannelId
         ];
         return $this->adapter
                     ->query($sql)

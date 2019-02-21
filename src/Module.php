@@ -24,8 +24,8 @@ class Module
     {
         return [
             'factories' => [
-                YouTubeTable\ProductVideoUploadLog::class => function ($sm) {
-                    return new YouTubeTable\ProductVideoUploadLog(
+                YouTubeTable\Channel::class => function ($sm) {
+                    return new YouTubeTable\Channel(
                         $sm->get('you-tube')
                     );
                 },
