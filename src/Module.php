@@ -24,6 +24,11 @@ class Module
     {
         return [
             'factories' => [
+                YouTubeTable\AppChannel::class => function ($sm) {
+                    return new YouTubeTable\AppChannel(
+                        $sm->get('you-tube')
+                    );
+                },
                 YouTubeTable\Channel::class => function ($sm) {
                     return new YouTubeTable\Channel(
                         $sm->get('you-tube')
