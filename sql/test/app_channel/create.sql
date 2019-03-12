@@ -5,5 +5,6 @@ CREATE TABLE `app_channel` (
   `access_token` varchar(255) DEFAULT NULL,
   `access_token_expiration` DATETIME DEFAULT NULL,
   `refresh_token` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`app_channel_id`)
+  PRIMARY KEY (`app_channel_id`),
+  UNIQUE app_id_channel_id (`app_id`, `channel_id`)
 ) ENGINE=InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
