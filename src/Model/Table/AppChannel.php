@@ -56,4 +56,28 @@ class AppChannel
                     ->execute($parameters)
                     ->getAffectedRows();
     }
+
+    public function selectWhereAppIdChannelId(
+        int $appId,
+        int $channelId
+    ): array {
+        $sql = '
+            SELECT `app_id`
+                 , `channel_id`
+                 , `access_token`
+                 , `access_token_expiration`
+                 , `refresh_token`
+            FROM `app_channel`
+           WHERE `app_id` = ?
+             AND `channel_id` = ?
+        ';
+        $parameters = [
+            $appId,
+            $channelId,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->current();
+    }
 }

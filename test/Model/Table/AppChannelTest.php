@@ -31,4 +31,25 @@ class AppChannelTest extends TableTestCase
             $affectedRows
         );
     }
+
+    public function testSelectWhereAppIdChannelId()
+    {
+        $affectedRows = $this->appChannelTable->insertOnDuplicateKeyUpdate(
+            1,
+            2,
+            'access_token',
+            new DateTime(),
+            'refresh_token'
+        );
+
+        $array = $this->appChannelTable->selectWhereAppIdChannelId(
+            1,
+            2
+        );
+
+        $this->assertInternalType(
+            'array',
+            $array
+        );
+    }
 }
