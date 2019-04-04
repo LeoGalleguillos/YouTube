@@ -45,10 +45,10 @@ class AppChannel
             $appId,
             $channelId,
             $accessToken,
-            $accessTokenExpiration->format('Y-m-d h:i:s'),
+            $accessTokenExpiration->format('Y-m-d H:i:s'),
             $refreshToken,
             $accessToken,
-            $accessTokenExpiration->format('Y-m-d h:i:s'),
+            $accessTokenExpiration->format('Y-m-d H:i:s'),
             $refreshToken,
         ];
         return $this->adapter
