@@ -2,7 +2,7 @@
     "name": "leo-galleguillos/you-tube",
     "license": "MIT",
     "require": {
-        "leo-galleguillos/test": "dev-master",
+        "leo-galleguillos/test": "^1.0",
         "laminas/laminas-db": "^2.9",
         "laminas/laminas-test": "^3.1"
     },
