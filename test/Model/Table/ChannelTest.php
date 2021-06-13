@@ -7,7 +7,7 @@ use Zend\Db\Adapter\Exception\InvalidQueryException;
 
 class ChannelTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->channelTable = new YouTubeTable\Channel(
             $this->getAdapter()

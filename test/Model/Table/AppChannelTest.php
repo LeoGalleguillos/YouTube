@@ -7,7 +7,7 @@ use LeoGalleguillos\Test\TableTestCase;
 
 class AppChannelTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->appChannelTable = new YouTubeTable\AppChannel(
             $this->getAdapter()
@@ -47,8 +47,7 @@ class AppChannelTest extends TableTestCase
             2
         );
 
-        $this->assertInternalType(
-            'array',
+        $this->assertIsArray(
             $array
         );
     }
